@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,5 +30,45 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.font {
+  font-family: "DM Sans", sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.slide-in {
+  animation-name: slideUp;
+  animation-duration: 1s;
+  z-index: 0;
+  animation-timing-function: ease-in-out;
+}
+
+.slide-in-2 {
+  animation-name: slideUp;
+  animation-duration: 1s;
+  z-index: 0;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2;
+}
+.slide-in-3 {
+  animation-name: slideUp;
+  animation-duration: 1s;
+  z-index: 0;
+  animation-timing-function: ease-in-out;
+  animation-delay: 4;
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

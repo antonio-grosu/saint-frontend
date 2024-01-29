@@ -1,113 +1,329 @@
+"use client";
 import Image from "next/image";
-
+import Join from "./Join";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <>
+      <Hero />
+      <Testimonials />
+      <Serviciu />
+      <div id="join">
+        <Join />
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   );
 }
+
+const Hero = () => {
+  const [hero, setHero] = useState(1);
+  useEffect(() => {
+    setInterval(() => {
+      if (hero <= 3) setHero(hero + 1);
+      if (hero == 3) setHero(1);
+    }, 2500);
+  });
+  return (
+    <div className="bg-white min-h-screen  gap-8 md:flex-row flex-col text-gray-950 py-36 flex items-center justify-between px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
+      <div className="md:w-5/12 md:block flex flex-col items-center">
+        <h1 className="text-4xl font-semibold capitalize">
+          {" "}
+          Let Us Guide You in Your journey
+        </h1>
+        <p className="mt-4 md:my-6 hidden md:block ">
+          Our supportive community and tailored strategies will empower your
+          journey, ensuring success in every step. Take the leap and thrive in
+          the realm of SaintsModels—where your potential meets unparalleled
+          support.
+        </p>
+        <Link
+          href="/about"
+          className="bg-pink-500 hover:scale-105 shadow-md hover:shadow-pink-500/50 transition-all  rounded-md px-4 py-2 font-semibold  items-center justify-center gap-2 hidden md:inline-flex text-gray-50"
+        >
+          <svg
+            className="w-6 h-6 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M20 14h-2.7L11 20.3l-.9.7H20a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1ZM9 3H4a1 1 0 0 0-1 1v13.5a3.5 3.5 0 1 0 7 0V4a1 1 0 0 0-1-1ZM6.5 18.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM19.1 7.9l-3.5-3.5a1 1 0 0 0-1.4 0L12 6.5v10l7.1-7.2a1 1 0 0 0 0-1.4Z" />
+          </svg>
+          Learn More
+        </Link>
+      </div>
+      <div className="md:w-5/12 w-full relative md:h-64 h-96 p-2  rounded-sm ">
+        {hero >= 1 && (
+          <Image
+            alt="Pie Chart"
+            src="/heroFirst.svg"
+            className="md:w-8/12 slide-in w-9/12 absolute left-0 md:top-4"
+            width={0}
+            height={0}
+          />
+        )}
+        {hero >= 2 && (
+          <Image
+            alt="Chart"
+            src="/heroSecond.svg"
+            className="md:w-8/12 w-9/12 slide-in  absolute right-0 md:top-12 top-24"
+            width={0}
+            height={0}
+          />
+        )}
+        {hero >= 3 && (
+          <Image
+            alt="Logo"
+            src="/heroThird.svg"
+            className="md:w-8/12 w-full slide-in absolute md:left-16 mx-auto md:top-36 top-48"
+            width={0}
+            height={0}
+          />
+        )}
+      </div>
+      <p className="mt-12 md:my-6 md:hidden block ">
+        {" "}
+        Our supportive community and tailored strategies will empower your
+        journey, ensuring success in every step. Take the leap and thrive in the
+        realm of SaintsModels—where your potential meets unparalleled support.
+      </p>
+
+      <Link
+        href="/about"
+        className="bg-pink-500 hover:scale-105 shadow-md hover:shadow-pink-500/50 transition-all   rounded-md px-4 py-3 w-full font-semibold  items-center justify-center gap-2 md:hidden inline-flex text-gray-50"
+      >
+        <svg
+          className="w-6 h-6 text-gray-800 dark:text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M20 14h-2.7L11 20.3l-.9.7H20a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1ZM9 3H4a1 1 0 0 0-1 1v13.5a3.5 3.5 0 1 0 7 0V4a1 1 0 0 0-1-1ZM6.5 18.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM19.1 7.9l-3.5-3.5a1 1 0 0 0-1.4 0L12 6.5v10l7.1-7.2a1 1 0 0 0 0-1.4Z" />
+        </svg>
+        Learn More
+      </Link>
+    </div>
+  );
+};
+
+const Testimonials = () => {
+  const arr = [
+    {
+      name: "Madison Evans",
+      username: "MadisonOnFire",
+      review:
+        "Choosing saintsmodels.com for OnlyFans was a brilliant move. Their professionalism, approachability, and support have boosted my profile engagement, and I feel more confident in my content. Thank you for being an integral part of my journey!",
+      chart: 1,
+    },
+    {
+      name: "Sophia Rose",
+      username: "SophiaRadiance",
+      review:
+        "Saintsmodels.com is a game-changer for my OnlyFans career. The personalized assistance, strategic planning, and genuine care for my success have resulted in significant growth. My earnings have soared, thanks to their continuous support and expertise!",
+      chart: 2,
+    },
+    {
+      name: "Isabella Taylor",
+      username: "BellaAdventures",
+      review:
+        "Grateful for the incredible support from saintsmodels.com on OnlyFans. Their expertise and dedication have skyrocketed my profile, and I've seen a substantial increase in subscribers. Professionalism at its best!",
+      chart: 3,
+    },
+  ];
+  const [testimonial, setTestimonial] = useState(arr[0]);
+  let i = 0;
+  useEffect(() => {
+    setInterval(() => {
+      if (i < 3) {
+        setTestimonial(arr[i]);
+        i++;
+      } else {
+        i = 0;
+        setTestimonial(arr[i]);
+        i++;
+      }
+    }, 5000);
+  }, []);
+  return (
+    <div className="bg-pink-500  py-36 px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
+      <h1 className="text-4xl md:inline-block font-semibold md:w-8/12">
+        Discover what our talented models have to say about their transformative
+        experiences with SaintsModels.
+      </h1>
+      <p className="hidden md:inline-block mt-4 md:mt-0 md:w-4/12">
+        From elevated earnings to unparalleled support, read the testimonials
+        that showcase the real impact of joining our community.
+      </p>
+      <div className="mt-12 slide-in md:mt-16 w-full gap-8 grid md:grid-cols-2 grid-cols-1">
+        <div className="w-full p-4 bg-white/20 rounded-md">
+          <div className="flex items-center justify-start gap-2">
+            <h4 className="text-lg font-semibold tetx-white">
+              {testimonial.name}
+            </h4>
+          </div>
+          <p className="text-sm text-white/80 mt-2 flex items-center justify-start gap-1">
+            @{testimonial.username}
+            <svg
+              className="w-4 h-4 inline-block text-gray-800 dark:text-blue-300"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 2a3 3 0 0 0-2.1.9l-.9.9a1 1 0 0 1-.7.3H7a3 3 0 0 0-3 3v1.2c0 .3 0 .5-.2.7l-1 .9a3 3 0 0 0 0 4.2l1 .9c.2.2.3.4.3.7V17a3 3 0 0 0 3 3h1.2c.3 0 .5 0 .7.2l.9 1a3 3 0 0 0 4.2 0l.9-1c.2-.2.4-.3.7-.3H17a3 3 0 0 0 3-3v-1.2c0-.3 0-.5.2-.7l1-.9a3 3 0 0 0 0-4.2l-1-.9a1 1 0 0 1-.3-.7V7a3 3 0 0 0-3-3h-1.2a1 1 0 0 1-.7-.2l-.9-1A3 3 0 0 0 12 2Zm3.7 7.7a1 1 0 1 0-1.4-1.4L10 12.6l-1.3-1.3a1 1 0 0 0-1.4 1.4l2 2c.4.4 1 .4 1.4 0l5-5Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </p>
+          <p className="mt-4 text-xs text-white">{testimonial.review}</p>
+        </div>
+        <div>
+          {testimonial.chart == 1 && (
+            <div className="slide-in w-full bg-white rounded-md">
+              <h3 className="text-gray-950 p-4 font-semibold text-xl">
+                Performance
+              </h3>
+              <div className="grid grid-cols-12  p-4 w-full items-end ">
+                <div className="w-4/12 h-4  bg-red-400 p-2 text-xs"></div>
+                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-4 bg-red-400 p-2"></div>
+                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-24 bg-teal-400 p-2"></div>
+              </div>
+            </div>
+          )}
+          {testimonial.chart == 2 && (
+            <div className="slide-in w-full bg-white rounded-md">
+              <h3 className="text-gray-950 p-4 font-semibold text-xl">
+                Performance
+              </h3>
+              <div className="grid grid-cols-12  p-4 w-full items-end ">
+                <div className="w-4/12 h-4  bg-red-400 p-2 text-xs"></div>
+                <div className="w-4/12 h-4 bg-red-400 p-2"></div>
+                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-24 bg-teal-400 p-2"></div>
+              </div>
+            </div>
+          )}
+          {testimonial.chart == 3 && (
+            <div className="slide-in w-full bg-white rounded-md">
+              <h3 className="text-gray-950 p-4 font-semibold text-xl">
+                Performance
+              </h3>
+              <div className="grid grid-cols-12  p-4 w-full items-end ">
+                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-4  bg-red-400 p-2 text-xs"></div>
+                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-4 bg-red-400 p-2"></div>
+                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
+                <div className="w-4/12 h-24 bg-teal-400 p-2"></div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+      <p className="md:hidden mt-12 ">[Descriere Testimonials]</p>
+    </div>
+  );
+};
+
+const Serviciu = () => {
+  return (
+    <div className="bg-white  gap-8 md:flex-row flex-col text-white-50 py-36 flex items-center justify-center px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
+      <div className="md:w-5/12 w-full md:block hidden p-2  rounded-sm ">
+        <Image
+          src="/illustration.svg"
+          width={300}
+          height={300}
+          className="w-7/12"
+        />
+      </div>
+      <div className="md:w-5/12 md:block flex flex-col items-center">
+        <h1 className="text-4xl font-semibold md:text-left text-center text-gray-950">
+          Elite Modeling Partnership
+        </h1>
+        <div className="md:w-5/12 w-full md:hidden mt-6 p-2   rounded-sm ">
+          <Image
+            alt="Phone Mockup"
+            src="/illustration.svg"
+            width={0}
+            height={0}
+            className="w-full"
+          />
+        </div>
+
+        <p className="mt-6 md:my-6 text-gray-950">
+          "Experience the SaintsModels Advantage: Our agency is more than a
+          platform; it's a partnership designed to propel your OnlyFans journey
+          to new heights. Benefit from personalized support, strategic
+          promotion, and a collaborative community that empowers your success.
+          Join us and discover the helpful side of modeling—an enriching
+          experience tailored for your growth and prosperity.
+        </p>
+        <Link
+          href="#join"
+          className="bg-pink-500 hover:scale-105 shadow-md hover:shadow-pink-500/50 transition-all   rounded-md px-4 py-2 font-semibold  items-center justify-center gap-2 hidden md:inline-flex text-gray-50"
+        >
+          <svg
+            className="w-6 h-6 text-gray-800 dark:text-gray-50"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 2a3 3 0 0 0-3 3v1H5a3 3 0 0 0-3 3v2.4l1.4.7a7.7 7.7 0 0 0 .7.3 21 21 0 0 0 16.4-.3l1.5-.7V9a3 3 0 0 0-3-3h-2V5a3 3 0 0 0-3-3h-4Zm5 4V5c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v1h6Zm6.4 7.9.6-.3V19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-5.4l.6.3a10 10 0 0 0 .7.3 23 23 0 0 0 18-.3h.1L21 13l.4.9ZM12 10a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Let's Talk
+        </Link>
+      </div>
+      <Link
+        href="#join"
+        className="bg-pink-500 hover:scale-105 shadow-md hover:shadow-pink-500/50 transition-all  rounded-md px-4 py-3 w-full font-semibold  items-center justify-center gap-2 md:hidden flex text-gray-50"
+      >
+        <svg
+          className="w-6 h-6 text-gray-800 dark:text-gray-50"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10 2a3 3 0 0 0-3 3v1H5a3 3 0 0 0-3 3v2.4l1.4.7a7.7 7.7 0 0 0 .7.3 21 21 0 0 0 16.4-.3l1.5-.7V9a3 3 0 0 0-3-3h-2V5a3 3 0 0 0-3-3h-4Zm5 4V5c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v1h6Zm6.4 7.9.6-.3V19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-5.4l.6.3a10 10 0 0 0 .7.3 23 23 0 0 0 18-.3h.1L21 13l.4.9ZM12 10a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        Let's Talk
+      </Link>
+    </div>
+  );
+};
