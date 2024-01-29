@@ -247,7 +247,11 @@ const Testimonials = () => {
           )}
         </div>
       </div>
-      <p className="md:hidden mt-12 ">[Descriere Testimonials]</p>
+      <p className="md:hidden mt-12 ">
+        {" "}
+        From elevated earnings to unparalleled support, read the testimonials
+        that showcase the real impact of joining our community.
+      </p>
     </div>
   );
 };
