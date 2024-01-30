@@ -33,7 +33,7 @@ function Join() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://saint-ha93ty7uq-codevs-ro.vercel.app/",
+        "https://saint-596rlub6q-codevs-ro.vercel.app/",
         {
           name: name,
           username: userName,
