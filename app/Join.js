@@ -32,13 +32,16 @@ function Join() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/", {
-        name: name,
-        username: userName,
-        email: email,
-        country: country,
-        number: number,
-      });
+      const response = await axios.post(
+        "https://saint-ha93ty7uq-codevs-ro.vercel.app/",
+        {
+          name: name,
+          username: userName,
+          email: email,
+          country: country,
+          number: number,
+        }
+      );
       console.log(response.data);
       setSent(!sent);
     } catch (error) {
