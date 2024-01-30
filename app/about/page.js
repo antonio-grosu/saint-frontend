@@ -96,7 +96,7 @@ const MainSection = () => {
     if (!isDone) {
       setNumber(number + 1);
     }
-    if (number == 1000) {
+    if (number == 8000) {
       setIsDone(true);
     }
   }, [number]);

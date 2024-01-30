@@ -18,15 +18,16 @@ export default function Home() {
 
 const Hero = () => {
   const [hero, setHero] = useState(1);
+  const [finished, setFinished] = useState(false);
   useEffect(() => {
     setInterval(() => {
-      if (hero <= 3) setHero(hero + 1);
-      if (hero == 3) setHero(1);
+      if (hero < 3) setHero(hero + 1);
+      if (hero == 3) setFinished(true);
     }, 2500);
   });
   return (
-    <div className="bg-white min-h-screen  gap-8 md:flex-row flex-col text-gray-950 py-36 flex items-center justify-between px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
-      <div className="md:w-5/12 md:block flex flex-col items-center">
+    <div className="bg-white min-h-screen   gap-8 md:flex-row flex-col text-gray-950 py-36 flex items-center justify-between px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
+      <div className="md:w-5/12 md:block flex flex-col items-center ">
         <h1 className="text-4xl font-semibold capitalize">
           {" "}
           Let Us Guide You in Your journey
@@ -53,33 +54,40 @@ const Hero = () => {
           Learn More
         </Link>
       </div>
-      <div className="md:w-5/12 w-full relative md:h-64 h-96 p-2  rounded-sm ">
-        {hero >= 1 && (
-          <Image
-            alt="Pie Chart"
-            src="/heroFirst.svg"
-            className="md:w-8/12 slide-in w-9/12 absolute left-0 md:top-4"
-            width={0}
-            height={0}
-          />
+      <div
+        className={
+          finished
+            ? "md:w-5/12 w-full relative p-2  rounded-sm "
+            : "md:w-5/12 w-full relative md:h-64 h-96  p-2  rounded-sm "
+        }
+      >
+        {!finished && (
+          <>
+            {hero >= 1 && (
+              <Image
+                alt="Pie Chart"
+                src="/heroFirst.svg"
+                className="md:w-8/12 slide-in w-9/12 absolute left-0 md:top-4"
+                width={0}
+                height={0}
+              />
+            )}
+            {hero >= 2 && (
+              <Image
+                alt="Chart"
+                src="/heroSecond.svg"
+                className="md:w-8/12 w-9/12 slide-in  absolute right-0 md:top-12 top-24"
+                width={0}
+                height={0}
+              />
+            )}
+          </>
         )}
-        {hero >= 2 && (
-          <Image
-            alt="Chart"
-            src="/heroSecond.svg"
-            className="md:w-8/12 w-9/12 slide-in  absolute right-0 md:top-12 top-24"
-            width={0}
-            height={0}
-          />
-        )}
-        {hero >= 3 && (
-          <Image
-            alt="Logo"
-            src="/heroThird.svg"
-            className="md:w-8/12 w-full slide-in absolute md:left-16 mx-auto md:top-36 top-48"
-            width={0}
-            height={0}
-          />
+        {finished && (
+          <div className="w-full border-2 slide-right border-pink-500 p-8 gap-4 rounded-2xl flex items-start justify-between">
+            <Image className="w-full" src="/logo.svg" width={0} height={0} />
+            <Image className="w-3/12" src="/only.svg" width={0} height={0} />
+          </div>
         )}
       </div>
       <p className="mt-12 md:my-6 md:hidden block ">
@@ -147,15 +155,17 @@ const Testimonials = () => {
     }, 5000);
   }, []);
   return (
-    <div className="bg-pink-500  py-36 px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
-      <h1 className="text-4xl md:inline-block font-semibold md:w-8/12">
-        Discover what our talented models have to say about their transformative
-        experiences with SaintsModels.
-      </h1>
-      <p className="hidden md:inline-block mt-4 md:mt-0 md:w-4/12">
-        From elevated earnings to unparalleled support, read the testimonials
-        that showcase the real impact of joining our community.
-      </p>
+    <div className="bg-pink-500 py-36 px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
+      <div className="flex items-center justify-between gap-4">
+        <h1 className="text-4xl md:inline-block font-semibold md:w-8/12">
+          Discover what our talented models have to say about their
+          transformative experiences with SaintsModels.
+        </h1>
+        <p className="hidden md:inline-block mt-4 md:mt-0 md:w-4/12">
+          From elevated earnings to unparalleled support, read the testimonials
+          that showcase the real impact of joining our community.
+        </p>
+      </div>
       <div className="mt-12 slide-in md:mt-16 w-full gap-8 grid md:grid-cols-2 grid-cols-1">
         <div className="w-full p-4 bg-white/20 rounded-md">
           <div className="flex items-center justify-start gap-2">
@@ -181,70 +191,13 @@ const Testimonials = () => {
           </p>
           <p className="mt-4 text-xs text-white">{testimonial.review}</p>
         </div>
-        <div>
-          {testimonial.chart == 1 && (
-            <div className="slide-in w-full bg-white rounded-md">
-              <h3 className="text-gray-950 p-4 font-semibold text-xl">
-                Performance
-              </h3>
-              <div className="grid grid-cols-12  p-4 w-full items-end ">
-                <div className="w-4/12 h-4  bg-red-400 p-2 text-xs"></div>
-                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-4 bg-red-400 p-2"></div>
-                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-24 bg-teal-400 p-2"></div>
-              </div>
-            </div>
-          )}
-          {testimonial.chart == 2 && (
-            <div className="slide-in w-full bg-white rounded-md">
-              <h3 className="text-gray-950 p-4 font-semibold text-xl">
-                Performance
-              </h3>
-              <div className="grid grid-cols-12  p-4 w-full items-end ">
-                <div className="w-4/12 h-4  bg-red-400 p-2 text-xs"></div>
-                <div className="w-4/12 h-4 bg-red-400 p-2"></div>
-                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-24 bg-teal-400 p-2"></div>
-              </div>
-            </div>
-          )}
-          {testimonial.chart == 3 && (
-            <div className="slide-in w-full bg-white rounded-md">
-              <h3 className="text-gray-950 p-4 font-semibold text-xl">
-                Performance
-              </h3>
-              <div className="grid grid-cols-12  p-4 w-full items-end ">
-                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-4  bg-red-400 p-2 text-xs"></div>
-                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-4 bg-red-400 p-2"></div>
-                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-12 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-8  bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-16 bg-teal-400 p-2"></div>
-                <div className="w-4/12 h-24 bg-teal-400 p-2"></div>
-              </div>
-            </div>
-          )}
+        <div className="w-full">
+          <Image
+            src="/testimonialsIllustration.svg"
+            width={0}
+            height={0}
+            className="w-full"
+          />
         </div>
       </div>
       <p className="md:hidden mt-12 ">

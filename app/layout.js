@@ -6,7 +6,7 @@ export const metadata = {
   title: "Saint's Models Agency",
   description: "Elite OnlyFans Modeling Partnership",
   icons: {
-    icon: "/icon.png",
+    icon: "/logo.svg",
     apple: "/apple.png",
     other: {
       rel: "apple-icon",
@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="font">
+      <body className="font bg-pink-500">
         <Navbar />
         {children}
         <Footer />

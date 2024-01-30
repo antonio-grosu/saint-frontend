@@ -5,18 +5,14 @@ function Footer() {
     <footer className="  bg-gray-200 px-8 pt-12 pb-4 md:px-12  lg:px-16 xl:px-24  2xl:px-28 ">
       <div className="grid grid-cols-1 md:grid-cols-4 md:items-start text-center items-center gap-12 md:gap-0">
         <div className="flex  items-center justify-between flex-col  ">
-          <Link href="/">
+          <Link href="/" className="w-full">
             <Image
               src="/logo.svg"
-              className="w-4/12 p-2 mx-auto bg-white rounded-md"
+              className="w-full p-2 mx-auto  rounded-md"
               width={0}
               height={0}
             />
           </Link>
-          <h1 className="text-2xl font-semibold text-pink-500 mt-4">
-            Saint's Models <br />
-            <span className="text-sm text-pink-500/80">We Work. You Earn.</span>
-          </h1>
         </div>
         <div className=" text-gray-950 ">
           <h3 className=" font-semibold text-lg text-center">Social Media</h3>
@@ -29,15 +25,9 @@ function Footer() {
             </Link>
             <Link
               href=""
-              className=" hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
+              className="mt-4 hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
             >
-              LinkedIN
-            </Link>
-            <Link
-              href=""
-              className=" hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
-            >
-              Facebook
+              Tiktok
             </Link>
           </div>
         </div>
@@ -77,7 +67,7 @@ function Footer() {
               href=""
               className=" hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
             >
-              Phone Number
+              WhatsApp
             </Link>
           </div>
         </div>

@@ -6,13 +6,14 @@ import Image from "next/image";
 
 function Navbar() {
   const [mobile, setMobile] = useState(false);
+  const [socials, setSocials] = useState(false);
   return (
-    <div>
-      <nav className="z-10 flex fixed w-full  top-0 items-center justify-between flex-wrap bg-gray-200 px-8 py-6 md:px-12  lg:px-16 xl:px-24  2xl:px-28 ">
-        <Link href="/" className="md:w-1/12">
+    <div className="relative">
+      <nav className="z-10 flex fixed w-full  top-0 items-center justify-between flex-wrap bg-gray-200 px-8 py-4 md:px-12  lg:px-16 xl:px-24  2xl:px-28 ">
+        <Link href="/" className="md:w-2/12 w-4/12">
           <Image
             src="/logo.svg"
-            className="w-5/12 md:w-1/2 p-2 bg-white rounded-md"
+            className="md:w-9/12 w-full p-2  rounded-md"
             width={0}
             height={0}
           />
@@ -73,21 +74,21 @@ function Navbar() {
         </svg>
       </nav>
       {mobile && (
-        <div className="relative  flex">
+        <div className="relative   flex ">
           <div
-            className="fixed z-20 top-0 h-screen w-5/12 bg-gray-950/40"
+            className="fixed z-20 top-0 h-screen w-full bg-gray-950/40"
             onClick={() => {
               setMobile(false);
             }}
           ></div>
-          <div className="fixed top-0 right-0 z-20 h-screen w-7/12 flex flex-col justify-between gap-4 items-start bg-pink-500 p-8">
+          <div className="fixed slide-right top-0 right-0 z-20 h-screen w-7/12 flex flex-col justify-between gap-4 items-start bg-pink-500 p-8">
             <div className="w-full">
               <h3 className="text-white font-semibold text-xl underline underline-offset-4">
                 Navigation
               </h3>
               <Link
                 href="/"
-                className="py-4 flex items-center justify-start gap-2"
+                className="py-4 slide-in flex items-center justify-start gap-2"
                 onClick={() => setMobile(!mobile)}
               >
                 <svg
@@ -109,7 +110,7 @@ function Navbar() {
               </Link>
               <Link
                 href="/about"
-                className="py-4 flex items-center justify-start gap-2"
+                className="py-4 slide-in flex items-center justify-start gap-2"
                 onClick={() => setMobile(!mobile)}
               >
                 <svg
@@ -129,7 +130,7 @@ function Navbar() {
               </Link>
               <Link
                 href="/faq"
-                className="py-4 flex items-center justify-start gap-2"
+                className="py-4 slide-in flex items-center justify-start gap-2"
                 onClick={() => setMobile(!mobile)}
               >
                 <svg
@@ -150,7 +151,7 @@ function Navbar() {
               <Link
                 href="#join"
                 onClick={() => setMobile(!mobile)}
-                className="py-2 rounded-md flex items-center justify-center w-full bg-white text-pink-500 font-semibold gap-2"
+                className="py-2 slide-in rounded-md flex items-center justify-center w-full bg-white text-pink-500 font-semibold gap-2"
               >
                 <svg
                   className="w-6 h-6 text-gray-800 dark:text-pink-500"
@@ -183,7 +184,7 @@ function Navbar() {
                 href={"/"}
                 onClick={() => setMobile(!mobile)}
                 // href="/email"
-                className="py-4 flex items-center justify-start gap-2"
+                className="py-4 slide-in flex items-center justify-start gap-2"
               >
                 <svg
                   className="w-6 h-6 text-gray-800 dark:text-white"
@@ -200,7 +201,7 @@ function Navbar() {
                 href={"/"}
                 onClick={() => setMobile(!mobile)}
                 // href="/about"
-                className="py-4 flex items-center justify-start gap-2"
+                className="py-4 slide-in flex items-center justify-start gap-2"
               >
                 <svg
                   className="w-6 h-6 text-gray-800 dark:text-white"
@@ -218,6 +219,94 @@ function Navbar() {
           </div>
         </div>
       )}
+      <div className="fixed w-1/12 right-8 md:right-0 h-screen p-8 flex items-end justify-end ">
+        <div className="grid grid-cols-1 gap-2">
+          {!socials && (
+            <div
+              onClick={() => {
+                setSocials(!socials);
+              }}
+              className="w-12 h-12 bg-pink-500 shadow-md border-2 border-white/20 rounded-full flex items-center justify-center cursor-pointer hover:bg-pink-100 transition-all"
+            >
+              <svg
+                className="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4 3a1 1 0 0 0-1 1v8c0 .6.4 1 1 1h1v2a1 1 0 0 0 1.7.7L9.4 13H15c.6 0 1-.4 1-1V4c0-.6-.4-1-1-1H4Z"
+                  clip-rule="evenodd"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M8 17.2h.1l2.1-2.2H15a3 3 0 0 0 3-3V8h2c.6 0 1 .4 1 1v8c0 .6-.4 1-1 1h-1v2a1 1 0 0 1-1.7.7L14.6 18H9a1 1 0 0 1-1-.8Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+          )}
+          {socials && (
+            <>
+              <Link
+                href="https://www.instagram.com/saint_models"
+                onClick={() => {
+                  setSocials(!socials);
+                }}
+                className="w-12 h-12 slide-in  rounded-full flex items-center justify-center cursor-pointer hover:bg-pink-100 transition-all"
+              >
+                <Image
+                  src="/insta.svg"
+                  width={0}
+                  height={0}
+                  className="w-full"
+                />
+              </Link>
+              <Link
+                href="https://wa.me/0766851285"
+                onClick={() => {
+                  setSocials(!socials);
+                }}
+                className="w-12 h-12 slide-in  rounded-full flex items-center justify-center cursor-pointer hover:bg-pink-100 transition-all"
+              >
+                <Image
+                  src="/whatsapp.svg"
+                  width={0}
+                  height={0}
+                  className="w-full"
+                />
+              </Link>
+              <div
+                onClick={() => {
+                  setSocials(!socials);
+                }}
+                className="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center cursor-pointer hover:bg-pink-100 transition-all"
+              >
+                <svg
+                  className="w-6 h-6 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 3a1 1 0 0 0-1 1v8c0 .6.4 1 1 1h1v2a1 1 0 0 0 1.7.7L9.4 13H15c.6 0 1-.4 1-1V4c0-.6-.4-1-1-1H4Z"
+                    clip-rule="evenodd"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 17.2h.1l2.1-2.2H15a3 3 0 0 0 3-3V8h2c.6 0 1 .4 1 1v8c0 .6-.4 1-1 1h-1v2a1 1 0 0 1-1.7.7L14.6 18H9a1 1 0 0 1-1-.8Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
