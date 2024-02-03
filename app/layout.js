@@ -6,11 +6,11 @@ export const metadata = {
   title: "Saint's Models Agency",
   description: "Elite OnlyFans Modeling Partnership",
   icons: {
-    icon: "/logo.svg",
-    apple: "/logo.svg",
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
     other: {
       rel: "apple-icon",
-      url: "/logo.svg",
+      url: "/apple-touch-icon.png",
     },
   },
 };

@@ -9,6 +9,7 @@ function Join() {
   const [country, setCountry] = useState("");
   const [option, setOption] = useState("");
   const [number, setNumber] = useState("");
+  const [insta, setInsta] = useState("");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -32,21 +33,22 @@ function Join() {
   const handleOptionChange = (e) => {
     setOption(e.target.value);
   };
+  const handleInstaChange = (e) => {
+    setInsta(e.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "https://saint-596rlub6q-codevs-ro.vercel.app/",
-        {
-          name: name,
-          email: email,
-          country: country,
-          number: number,
-          option: option,
-          userName: userName,
-        }
-      );
+      const response = await axios.post("https://saint-api.vercel.app/", {
+        name: name,
+        email: email,
+        country: country,
+        number: number,
+        option: option,
+        userName: userName,
+        insta: insta,
+      });
       console.log(response.data);
       setSent(!sent);
     } catch (error) {
@@ -106,6 +108,17 @@ function Join() {
             onChange={handleEmailChange}
             required
             placeholder="Your Email"
+            className="block mt-2 bg-pink-500/10 border-2 w-full py-1 focus:border-pink-500 focus:outline-none px-4 text-pink-500 border-pink-500/50 rounded-full placeholder:text-pink-500/40 "
+          ></input>
+        </div>
+        <div className="slide-in">
+          <label className="text-white">Your Instagram</label>
+          <input
+            type="username"
+            value={insta}
+            onChange={handleInstaChange}
+            required
+            placeholder="Your Instagram"
             className="block mt-2 bg-pink-500/10 border-2 w-full py-1 focus:border-pink-500 focus:outline-none px-4 text-pink-500 border-pink-500/50 rounded-full placeholder:text-pink-500/40 "
           ></input>
         </div>

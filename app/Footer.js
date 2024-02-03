@@ -8,9 +8,9 @@ function Footer() {
           <Link href="/" className="w-full">
             <Image
               src="/logo.svg"
-              className="w-full p-2 mx-auto  rounded-md"
-              width={0}
-              height={0}
+              className="object-cover"
+              width={1920}
+              height={1920}
             />
           </Link>
         </div>
@@ -18,36 +18,36 @@ function Footer() {
           <h3 className=" font-semibold text-lg text-center">Social Media</h3>
           <div className="flex flex-col text-sm gap-4 md:items-center ">
             <Link
-              href=""
+              href="https://instagram.com/saints_models"
               className="mt-4 hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
             >
               Instagram
             </Link>
-            <Link
+            {/* <Link
               href=""
-              className="mt-4 hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
+              className=" hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
             >
               Tiktok
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className=" text-gray-950 ">
           <h3 className=" font-semibold text-lg text-center">Navigation</h3>
           <div className="flex flex-col text-sm gap-4 md:items-center ">
             <Link
-              href=""
+              href="/"
               className="mt-4 hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
             >
               Home
             </Link>
             <Link
-              href=""
+              href="/about"
               className=" hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
             >
               About us
             </Link>
             <Link
-              href=""
+              href="/faq"
               className=" hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
             >
               Frequently Asked Questions
@@ -58,13 +58,13 @@ function Footer() {
           <h3 className=" font-semibold text-lg text-center">Contact Us</h3>
           <div className="flex flex-col text-sm gap-4 md:items-center ">
             <Link
-              href=""
+              href="mailto:saintsmodels1@gmail.com"
               className="mt-4 hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
             >
               Email
             </Link>
             <Link
-              href="mailto:saintsmodels1@gmail.com"
+              href="https://wa.me/0766851285"
               className=" hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
             >
               WhatsApp

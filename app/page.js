@@ -64,29 +64,47 @@ const Hero = () => {
         {!finished && (
           <>
             {hero >= 1 && (
-              <Image
-                alt="Pie Chart"
-                src="/heroFirst.svg"
-                className="md:w-1/2 w-7/12 rounded-md slide-in mx-auto absolute left-0 md:top-4"
-                width={500}
-                height={500}
-              />
+              <div className="md:w-1/2 w-7/12 rounded-md slide-in mx-auto absolute left-0 md:top-4">
+                <Image
+                  alt="Pie Chart"
+                  src="/heroFirst.svg"
+                  className="object-cover"
+                  width={1920}
+                  height={1920}
+                />
+              </div>
             )}
             {hero >= 2 && (
-              <Image
-                alt="Chart"
-                src="/heroSecond.svg"
-                className="md:w-8/12 w-9/12 slide-in  absolute right-0 md:top-12 top-24"
-                width={500}
-                height={500}
-              />
+              <div className="md:w-8/12 w-9/12 slide-in  absolute right-0 md:top-12 top-24">
+                <Image
+                  alt="Chart"
+                  src="/heroSecond.svg"
+                  className="object-cover"
+                  width={1920}
+                  height={1920}
+                />
+              </div>
             )}
           </>
         )}
         {finished && (
           <div className="w-full border-2 slide-right border-pink-500 p-8 gap-4 rounded-2xl flex items-start justify-between">
-            <Image className="w-full" src="/logo.svg" width={0} height={0} />
-            <Image className="w-3/12" src="/only.svg" width={0} height={0} />
+            <div className="w-full">
+              <Image
+                className="object-cover"
+                src="/logo.svg"
+                width={1920}
+                height={1920}
+              />
+            </div>
+            <div className="w-3/12">
+              <Image
+                className="object-cover"
+                src="/only.svg"
+                width={1920}
+                height={1920}
+              />
+            </div>
           </div>
         )}
       </div>
@@ -120,21 +138,18 @@ const Testimonials = () => {
   const arr = [
     {
       name: "Madison Evans",
-      username: "MadisonOnFire",
       review:
         "Choosing saintsmodels.com for OnlyFans was a brilliant move. Their professionalism, approachability, and support have boosted my profile engagement, and I feel more confident in my content. Thank you for being an integral part of my journey!",
       img: "/review1.svg",
     },
     {
       name: "Sophia Rose",
-      username: "SophiaRadiance",
       review:
         "Saintsmodels.com is a game-changer for my OnlyFans career. The personalized assistance, strategic planning, and genuine care for my success have resulted in significant growth. My earnings have soared, thanks to their continuous support and expertise!",
       img: "/review2.svg",
     },
     {
       name: "Isabella Taylor",
-      username: "BellaAdventures",
       review:
         "Grateful for the incredible support from saintsmodels.com on OnlyFans. Their expertise and dedication have skyrocketed my profile, and I've seen a substantial increase in subscribers. Professionalism at its best!",
       img: "/review3.svg",
@@ -169,40 +184,28 @@ const Testimonials = () => {
       <div className="mt-12 slide-in md:mt-16 w-full gap-8 items-center justify-center text-center grid md:grid-cols-2 grid-cols-1">
         <div className="w-full p-4 bg-white/20 rounded-md">
           <div className="flex items-center justify-center ">
-            <Image
-              src={testimonial.img}
-              width={500}
-              height={500}
-              className="w-2/12 mr-4 mb-2 rounded-full"
-            />
+            <div className="w-2/12">
+              <Image
+                src={testimonial.img}
+                width={1920}
+                height={1920}
+                className=" mr-4 mb-2 rounded-full"
+              />
+            </div>
+
             <h4 className="text-lg font-semibold tetx-white">
               {testimonial.name}
             </h4>
           </div>
-          <p className="text-sm text-white/80 mt-2 flex items-center justify-center gap-1">
-            @{testimonial.username}
-            <svg
-              className="w-4 h-4 inline-block text-gray-800 dark:text-blue-300"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12 2a3 3 0 0 0-2.1.9l-.9.9a1 1 0 0 1-.7.3H7a3 3 0 0 0-3 3v1.2c0 .3 0 .5-.2.7l-1 .9a3 3 0 0 0 0 4.2l1 .9c.2.2.3.4.3.7V17a3 3 0 0 0 3 3h1.2c.3 0 .5 0 .7.2l.9 1a3 3 0 0 0 4.2 0l.9-1c.2-.2.4-.3.7-.3H17a3 3 0 0 0 3-3v-1.2c0-.3 0-.5.2-.7l1-.9a3 3 0 0 0 0-4.2l-1-.9a1 1 0 0 1-.3-.7V7a3 3 0 0 0-3-3h-1.2a1 1 0 0 1-.7-.2l-.9-1A3 3 0 0 0 12 2Zm3.7 7.7a1 1 0 1 0-1.4-1.4L10 12.6l-1.3-1.3a1 1 0 0 0-1.4 1.4l2 2c.4.4 1 .4 1.4 0l5-5Z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </p>
+
           <p className="mt-4 text-xs text-white">{testimonial.review}</p>
         </div>
-        <div className="w-full">
+        <div className="w-full ">
           <Image
             src="/testimonialsIllustration.svg"
-            width={0}
-            height={0}
-            className="w-full"
+            width={1920}
+            height={1920}
+            className="object-cover rounded-md"
           />
         </div>
       </div>
@@ -218,26 +221,30 @@ const Testimonials = () => {
 const Serviciu = () => {
   return (
     <div className="bg-white  gap-8 md:flex-row flex-col text-white-50 py-36 flex items-center justify-center px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
-      <div className="md:w-5/12 w-full md:block hidden p-2  rounded-sm ">
-        <Image
-          src="/illustration.svg"
-          width={500}
-          height={500}
-          className="w-7/12"
-        />
+      <div className="w-7/12">
+        <div className="md:w-5/12 w-full md:block hidden p-2  rounded-sm ">
+          <Image
+            src="/illustration.svg"
+            width={1920}
+            height={1920}
+            className="object-cover"
+          />
+        </div>
       </div>
       <div className="md:w-5/12 md:block flex flex-col items-center">
         <h1 className="text-4xl font-semibold md:text-left text-center text-gray-950">
           Elite Modeling Partnership
         </h1>
-        <div className="md:w-5/12 w-full md:hidden mt-6 p-2   rounded-sm ">
-          <Image
-            alt="Phone Mockup"
-            src="/illustration.svg"
-            width={500}
-            height={500}
-            className="w-full"
-          />
+        <div className="md:w-5/12 w-full md:hidden mt-6 p-2 rounded-sm ">
+          <div className="w-full">
+            <Image
+              alt="Phone Mockup"
+              src="/illustration.svg"
+              width={1920}
+              height={1920}
+              className="object-cover"
+            />
+          </div>
         </div>
 
         <p className="mt-6 md:my-6 text-gray-950">

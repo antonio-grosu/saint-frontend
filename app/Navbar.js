@@ -13,9 +13,9 @@ function Navbar() {
         <Link href="/" className="md:w-2/12 w-8/12">
           <Image
             src="/logo.svg"
-            className=" w-full p-2  rounded-md"
-            width={500}
-            height={500}
+            className=" object-cover"
+            width={1920}
+            height={1920}
           />
         </Link>
         <div className=" hidden md:flex items center justify-between gap-4 text-gray-950">
