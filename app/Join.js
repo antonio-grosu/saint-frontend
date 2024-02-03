@@ -7,6 +7,7 @@ function Join() {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
+  const [option, setOption] = useState("");
   const [number, setNumber] = useState("");
 
   const handleNameChange = (e) => {
@@ -28,6 +29,9 @@ function Join() {
   const handleNumberChange = (e) => {
     setNumber(e.target.value);
   };
+  const handleOptionChange = (e) => {
+    setOption(e.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,10 +40,11 @@ function Join() {
         "https://saint-596rlub6q-codevs-ro.vercel.app/",
         {
           name: name,
-          username: userName,
           email: email,
           country: country,
           number: number,
+          option: option,
+          userName: userName,
         }
       );
       console.log(response.data);
@@ -78,7 +83,7 @@ function Join() {
       </div>
       <form
         onSubmit={handleSubmit}
-        className="md:w-7/12 slide-in w-full mx-auto bg-white/10 p-6"
+        className="md:w-7/12 slide-in w-full mx-auto flex flex-col gap-4 bg-white/10 p-6"
       >
         {/* ... other form elements */}
         <div>
@@ -92,18 +97,8 @@ function Join() {
             className="block mt-2 bg-pink-500/10 border-2 w-full py-1 focus:border-pink-500 focus:outline-none px-4 text-pink-500 border-pink-500/50 rounded-full placeholder:text-pink-500/40 "
           ></input>
         </div>
-        <div>
-          <label className="text-white">Your OnlyFans Username</label>
-          <input
-            type="text"
-            value={userName}
-            onChange={handleUserNameChange}
-            required
-            placeholder="Your Account Username"
-            className="block mt-2 bg-pink-500/10 border-2 w-full py-1 focus:border-pink-500 focus:outline-none px-4 text-pink-500 border-pink-500/50 rounded-full placeholder:text-pink-500/40 "
-          ></input>
-        </div>
-        <div>
+
+        <div className="slide-in">
           <label className="text-white">Your Email</label>
           <input
             type="email"
@@ -114,6 +109,46 @@ function Join() {
             className="block mt-2 bg-pink-500/10 border-2 w-full py-1 focus:border-pink-500 focus:outline-none px-4 text-pink-500 border-pink-500/50 rounded-full placeholder:text-pink-500/40 "
           ></input>
         </div>
+        <div className="flex flex-col ">
+          <span className="text-white mr-4 block">
+            Do you have an OnlyFans Account?
+          </span>
+          <div className="flex items-center justify-start mt-2 gap-2">
+            <label className="text-white mr-2 block">
+              <input
+                type="radio"
+                value="DA"
+                checked={option === "DA"}
+                onChange={handleOptionChange}
+                className="bg-red-200"
+              />
+              Yes
+            </label>
+            <label className="text-white block">
+              <input
+                type="radio"
+                value="NU"
+                checked={option === "NU"}
+                onChange={handleOptionChange}
+                className="bg-red-200"
+              />
+              No
+            </label>
+          </div>
+        </div>
+        {option === "DA" && (
+          <div>
+            <label className="text-white">Your username</label>
+            <input
+              type="username"
+              value={userName}
+              onChange={handleUserNameChange}
+              required
+              placeholder="Your OnlyFans Username"
+              className="block mt-2 bg-pink-500/10 border-2 w-full py-1 focus:border-pink-500 focus:outline-none px-4 text-pink-500 border-pink-500/50 rounded-full placeholder:text-pink-500/40 "
+            ></input>
+          </div>
+        )}
         <div>
           <label className="text-white">Country</label>
           <select

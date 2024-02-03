@@ -64,7 +64,7 @@ function Footer() {
               Email
             </Link>
             <Link
-              href=""
+              href="mailto:saintsmodels1@gmail.com"
               className=" hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
             >
               WhatsApp
@@ -73,6 +73,10 @@ function Footer() {
         </div>
       </div>
       <div className="px-4 py-2 md:w-4/12 rounded-md mx-auto hover:scale-105 cursor-pointer hover:text-purple-500 hover:font-semibold transition-all  mt-12">
+        <p className="text-center mb-2 poppins font font-bold text-pink-500">
+          Copyright © Saint's Models Agency 2024
+        </p>
+
         <Link
           href="https://codevs.ro"
           className="flex items-center  justify-center  text-gray-950"
@@ -82,7 +86,7 @@ function Footer() {
             src="/codevs.png"
             width={40}
             height={40}
-            className="ml-2 md:w-1/12"
+            className="ml-2 text-sm md:w-1/12"
           />
         </Link>
       </div>

@@ -9,13 +9,13 @@ function Navbar() {
   const [socials, setSocials] = useState(false);
   return (
     <div className="relative">
-      <nav className="z-10 flex fixed w-full  top-0 items-center justify-between flex-wrap bg-gray-200 px-8 py-4 md:px-12  lg:px-16 xl:px-24  2xl:px-28 ">
-        <Link href="/" className="md:w-2/12 w-4/12">
+      <nav className="z-10 flex fixed w-full  top-0 items-center justify-between flex-wrap bg-gray-200 px-8  py-2 md:py-4 md:px-12  lg:px-16 xl:px-24  2xl:px-28 ">
+        <Link href="/" className="md:w-2/12 w-8/12">
           <Image
             src="/logo.svg"
-            className="md:w-9/12 w-full p-2  rounded-md"
-            width={0}
-            height={0}
+            className=" w-full p-2  rounded-md"
+            width={500}
+            height={500}
           />
         </Link>
         <div className=" hidden md:flex items center justify-between gap-4 text-gray-950">
@@ -219,7 +219,7 @@ function Navbar() {
           </div>
         </div>
       )}
-      <div className="fixed w-1/12 right-8 md:right-0 h-screen p-8 flex items-end justify-end ">
+      <div className="fixed w-1/12 right-8 md:right-0 h-screen p-8 flex items-end md:bottom-0x bottom-8 ">
         <div className="grid grid-cols-1 gap-2">
           {!socials && (
             <div
@@ -255,13 +255,13 @@ function Navbar() {
                 onClick={() => {
                   setSocials(!socials);
                 }}
-                className="w-12 h-12 slide-in  rounded-full flex items-center justify-center cursor-pointer hover:bg-pink-100 transition-all"
+                className="w-12 h-12  slide-in flex items-center justify-center cursor-pointer  transition-all"
               >
                 <Image
                   src="/insta.svg"
-                  width={0}
-                  height={0}
-                  className="w-full"
+                  width={500}
+                  height={500}
+                  className="w-full  bg-white rounded-md p-1"
                 />
               </Link>
               <Link
@@ -275,7 +275,7 @@ function Navbar() {
                   src="/whatsapp.svg"
                   width={0}
                   height={0}
-                  className="w-full"
+                  className="w-full bg-white rounded-md p-1"
                 />
               </Link>
               <div

@@ -7,10 +7,10 @@ export const metadata = {
   description: "Elite OnlyFans Modeling Partnership",
   icons: {
     icon: "/logo.svg",
-    apple: "/apple.png",
+    apple: "/logo.svg",
     other: {
       rel: "apple-icon",
-      url: "/apple.png",
+      url: "/logo.svg",
     },
   },
 };

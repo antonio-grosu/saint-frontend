@@ -67,9 +67,9 @@ const Hero = () => {
               <Image
                 alt="Pie Chart"
                 src="/heroFirst.svg"
-                className="md:w-8/12 slide-in w-9/12 absolute left-0 md:top-4"
-                width={0}
-                height={0}
+                className="md:w-1/2 w-7/12 rounded-md slide-in mx-auto absolute left-0 md:top-4"
+                width={500}
+                height={500}
               />
             )}
             {hero >= 2 && (
@@ -77,8 +77,8 @@ const Hero = () => {
                 alt="Chart"
                 src="/heroSecond.svg"
                 className="md:w-8/12 w-9/12 slide-in  absolute right-0 md:top-12 top-24"
-                width={0}
-                height={0}
+                width={500}
+                height={500}
               />
             )}
           </>
@@ -123,21 +123,21 @@ const Testimonials = () => {
       username: "MadisonOnFire",
       review:
         "Choosing saintsmodels.com for OnlyFans was a brilliant move. Their professionalism, approachability, and support have boosted my profile engagement, and I feel more confident in my content. Thank you for being an integral part of my journey!",
-      chart: 1,
+      img: "/review1.svg",
     },
     {
       name: "Sophia Rose",
       username: "SophiaRadiance",
       review:
         "Saintsmodels.com is a game-changer for my OnlyFans career. The personalized assistance, strategic planning, and genuine care for my success have resulted in significant growth. My earnings have soared, thanks to their continuous support and expertise!",
-      chart: 2,
+      img: "/review2.svg",
     },
     {
       name: "Isabella Taylor",
       username: "BellaAdventures",
       review:
         "Grateful for the incredible support from saintsmodels.com on OnlyFans. Their expertise and dedication have skyrocketed my profile, and I've seen a substantial increase in subscribers. Professionalism at its best!",
-      chart: 3,
+      img: "/review3.svg",
     },
   ];
   const [testimonial, setTestimonial] = useState(arr[0]);
@@ -166,14 +166,20 @@ const Testimonials = () => {
           that showcase the real impact of joining our community.
         </p>
       </div>
-      <div className="mt-12 slide-in md:mt-16 w-full gap-8 grid md:grid-cols-2 grid-cols-1">
+      <div className="mt-12 slide-in md:mt-16 w-full gap-8 items-center justify-center text-center grid md:grid-cols-2 grid-cols-1">
         <div className="w-full p-4 bg-white/20 rounded-md">
-          <div className="flex items-center justify-start gap-2">
+          <div className="flex items-center justify-center ">
+            <Image
+              src={testimonial.img}
+              width={500}
+              height={500}
+              className="w-2/12 mr-4 mb-2 rounded-full"
+            />
             <h4 className="text-lg font-semibold tetx-white">
               {testimonial.name}
             </h4>
           </div>
-          <p className="text-sm text-white/80 mt-2 flex items-center justify-start gap-1">
+          <p className="text-sm text-white/80 mt-2 flex items-center justify-center gap-1">
             @{testimonial.username}
             <svg
               className="w-4 h-4 inline-block text-gray-800 dark:text-blue-300"
@@ -215,8 +221,8 @@ const Serviciu = () => {
       <div className="md:w-5/12 w-full md:block hidden p-2  rounded-sm ">
         <Image
           src="/illustration.svg"
-          width={300}
-          height={300}
+          width={500}
+          height={500}
           className="w-7/12"
         />
       </div>
@@ -228,8 +234,8 @@ const Serviciu = () => {
           <Image
             alt="Phone Mockup"
             src="/illustration.svg"
-            width={0}
-            height={0}
+            width={500}
+            height={500}
             className="w-full"
           />
         </div>
