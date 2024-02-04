@@ -2,7 +2,7 @@ import Image from "next/image";
 import axios from "axios";
 import { useState } from "react";
 function Join() {
-  const [sent, setSent] = useState(false);
+  const [sent, setSent] = useState(true);
   const [name, setName] = useState("");
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -79,8 +79,20 @@ function Join() {
           </div>
         )}
         <div className="flex flex-col items-center gap-4 mt-8">
-          <Image src="/logo.svg" className="w-full" width={0} height={0} />
-          <Image src="/only.svg" className="w-5/12" width={0} height={0} />
+          <Image
+            alt="Logos"
+            src="/logo.svg"
+            className="w-full"
+            width={1920}
+            height={1920}
+          />
+          <Image
+            alt="Logos"
+            src="/only.svg"
+            className="w-5/12"
+            width={1920}
+            height={1920}
+          />
         </div>
       </div>
       <form
@@ -383,22 +395,22 @@ function Join() {
             Submit
           </button>
         )}
+        {sent && (
+          <div className="bg-green-300/20 block md:hidden slide-right mt-8 p-4 rounded-md border-2 border-green-300 w-full text-center">
+            <p className="font text-sm">
+              <span className="text-xl mb-2 font-bold block">
+                You Applied Successfully!{" "}
+              </span>
+              Saint's Models Agency Team will get back to you in a short time!
+            </p>
+          </div>
+        )}
       </form>
       {!sent && (
         <p className="block md:hidden text-white mt-8">
           By completing and submitting the form, you are sending a proposal for
           working together. After a further analysis, we will get back to you!{" "}
         </p>
-      )}
-      {sent && (
-        <div className="bg-green-300/20 block md:hidden slide-right mt-8 p-4 rounded-md border-2 border-green-300 w-full text-center">
-          <p className="font text-sm">
-            <span className="text-xl mb-2 font-bold block">
-              You Applied Successfully!{" "}
-            </span>
-            Saint's Models Agency Team will get back to you in a short time!
-          </p>
-        </div>
       )}
     </div>
   );

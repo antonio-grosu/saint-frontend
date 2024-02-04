@@ -3,6 +3,7 @@ import Image from "next/image";
 import Join from "./Join";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+
 export default function Home() {
   return (
     <>
@@ -20,13 +21,16 @@ const Hero = () => {
   const [hero, setHero] = useState(1);
   const [finished, setFinished] = useState(false);
   useEffect(() => {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       if (hero < 3) setHero(hero + 1);
-      if (hero == 3) setFinished(true);
+      if (hero === 3) setFinished(true);
     }, 2500);
-  });
+
+    return () => clearInterval(intervalId);
+  }, [hero]);
+
   return (
-    <div className="bg-white min-h-screen   gap-8 md:flex-row flex-col text-gray-950 py-36 flex items-center justify-between px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
+    <div className="bg-white min-h-screen gap-8 md:flex-row flex-col text-gray-950 py-36 flex items-center justify-between px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72">
       <div className="md:w-5/12 md:block flex flex-col items-center ">
         <h1 className="text-4xl font-semibold capitalize">
           {" "}
@@ -90,28 +94,14 @@ const Hero = () => {
           </>
         )}
         {finished && (
-          <div className="w-full border-2 slide-right border-pink-500 p-8 gap-4 rounded-2xl flex items-start justify-between">
-            <div className="w-full">
-              <Image
-                priority
-                alt="Saint's Models Logo"
-                className="object-cover"
-                src="/logo.svg"
-                width={1920}
-                height={1920}
-              />
-            </div>
-            <div className="w-3/12">
-              <Image
-                priority
-                alt="Only Fans Logo"
-                className="object-cover"
-                src="/only.svg"
-                width={1920}
-                height={1920}
-              />
-            </div>
-          </div>
+          <Image
+            priority
+            width={1920}
+            height={1920}
+            src="/heroThird.svg"
+            className="rounded-md border-2 border-pink-500 "
+            alt="Logos"
+          />
         )}
       </div>
       <p className="mt-12 md:my-6 md:hidden block ">
@@ -164,7 +154,7 @@ const Testimonials = () => {
   const [testimonial, setTestimonial] = useState(arr[0]);
   let i = 0;
   useEffect(() => {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       if (i < 3) {
         setTestimonial(arr[i]);
         i++;
@@ -174,7 +164,10 @@ const Testimonials = () => {
         i++;
       }
     }, 5000);
+
+    return () => clearInterval(intervalId);
   }, []);
+
   return (
     <div className="bg-pink-500 py-36 px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
       <div className="flex items-center justify-between gap-4">
@@ -201,7 +194,7 @@ const Testimonials = () => {
               />
             </div>
 
-            <h4 className="text-lg font-semibold tetx-white ml-4">
+            <h4 className="text-lg font-semibold text-white ml-4">
               {testimonial.name}
             </h4>
           </div>
@@ -280,9 +273,9 @@ const Serviciu = () => {
             viewBox="0 0 24 24"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M10 2a3 3 0 0 0-3 3v1H5a3 3 0 0 0-3 3v2.4l1.4.7a7.7 7.7 0 0 0 .7.3 21 21 0 0 0 16.4-.3l1.5-.7V9a3 3 0 0 0-3-3h-2V5a3 3 0 0 0-3-3h-4Zm5 4V5c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v1h6Zm6.4 7.9.6-.3V19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-5.4l.6.3a10 10 0 0 0 .7.3 23 23 0 0 0 18-.3h.1L21 13l.4.9ZM12 10a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             />
           </svg>
           Let's Talk
@@ -300,9 +293,9 @@ const Serviciu = () => {
           viewBox="0 0 24 24"
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M10 2a3 3 0 0 0-3 3v1H5a3 3 0 0 0-3 3v2.4l1.4.7a7.7 7.7 0 0 0 .7.3 21 21 0 0 0 16.4-.3l1.5-.7V9a3 3 0 0 0-3-3h-2V5a3 3 0 0 0-3-3h-4Zm5 4V5c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v1h6Zm6.4 7.9.6-.3V19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-5.4l.6.3a10 10 0 0 0 .7.3 23 23 0 0 0 18-.3h.1L21 13l.4.9ZM12 10a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
         Let's Talk

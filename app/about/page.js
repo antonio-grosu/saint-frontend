@@ -20,9 +20,10 @@ const Serviciu = () => {
     <div className="bg-white  gap-8 md:flex-row flex-col text-white-50 py-36 flex items-center justify-center px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
       <div className="md:w-5/12 w-full md:block hidden p-2  rounded-sm ">
         <Image
+          alt="Illustration"
           src="/illustration.svg"
-          width={300}
-          height={300}
+          width={1920}
+          height={1920}
           className="w-7/12"
         />
       </div>
@@ -32,6 +33,7 @@ const Serviciu = () => {
         </h1>
         <div className="md:w-5/12 w-full md:hidden mt-6 p-2   rounded-sm ">
           <Image
+            alt="Illustration"
             src="/illustration.svg"
             width={0}
             height={0}
@@ -59,9 +61,9 @@ const Serviciu = () => {
             viewBox="0 0 24 24"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M10 2a3 3 0 0 0-3 3v1H5a3 3 0 0 0-3 3v2.4l1.4.7a7.7 7.7 0 0 0 .7.3 21 21 0 0 0 16.4-.3l1.5-.7V9a3 3 0 0 0-3-3h-2V5a3 3 0 0 0-3-3h-4Zm5 4V5c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v1h6Zm6.4 7.9.6-.3V19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-5.4l.6.3a10 10 0 0 0 .7.3 23 23 0 0 0 18-.3h.1L21 13l.4.9ZM12 10a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             />
           </svg>
           Let's Talk
@@ -79,9 +81,9 @@ const Serviciu = () => {
           viewBox="0 0 24 24"
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M10 2a3 3 0 0 0-3 3v1H5a3 3 0 0 0-3 3v2.4l1.4.7a7.7 7.7 0 0 0 .7.3 21 21 0 0 0 16.4-.3l1.5-.7V9a3 3 0 0 0-3-3h-2V5a3 3 0 0 0-3-3h-4Zm5 4V5c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v1h6Zm6.4 7.9.6-.3V19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-5.4l.6.3a10 10 0 0 0 .7.3 23 23 0 0 0 18-.3h.1L21 13l.4.9ZM12 10a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
         Let's Talk
@@ -106,6 +108,7 @@ const MainSection = () => {
         <h3 className="text-4xl text-center font-semibold">
           Increase Your Reach{" "}
           <Image
+            alt="Onlyfans Logo"
             src="/only.svg"
             className="w-7/12 mx-auto"
             width={0}
@@ -124,10 +127,11 @@ const MainSection = () => {
           <h3 className="text-4xl text-center font-semibold">
             Increase Your Reach{" "}
             <Image
+              alt="Onlyfans Logo"
               src="/only.svg"
               className="w-7/12  mx-auto"
-              width={0}
-              height={0}
+              width={1920}
+              height={1920}
             />
           </h3>
           <h3 className="text-xl  font-semibold text-center">
@@ -157,9 +161,9 @@ const MainSection = () => {
             viewBox="0 0 24 24"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M10 2a3 3 0 0 0-3 3v1H5a3 3 0 0 0-3 3v2.4l1.4.7a7.7 7.7 0 0 0 .7.3 21 21 0 0 0 16.4-.3l1.5-.7V9a3 3 0 0 0-3-3h-2V5a3 3 0 0 0-3-3h-4Zm5 4V5c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v1h6Zm6.4 7.9.6-.3V19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-5.4l.6.3a10 10 0 0 0 .7.3 23 23 0 0 0 18-.3h.1L21 13l.4.9ZM12 10a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             />
           </svg>
           Let's Talk
@@ -177,9 +181,9 @@ const MainSection = () => {
           viewBox="0 0 24 24"
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M10 2a3 3 0 0 0-3 3v1H5a3 3 0 0 0-3 3v2.4l1.4.7a7.7 7.7 0 0 0 .7.3 21 21 0 0 0 16.4-.3l1.5-.7V9a3 3 0 0 0-3-3h-2V5a3 3 0 0 0-3-3h-4Zm5 4V5c0-.6-.4-1-1-1h-4a1 1 0 0 0-1 1v1h6Zm6.4 7.9.6-.3V19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-5.4l.6.3a10 10 0 0 0 .7.3 23 23 0 0 0 18-.3h.1L21 13l.4.9ZM12 10a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
         Let's Talk
