@@ -9,9 +9,11 @@ function Navbar() {
   const [socials, setSocials] = useState(false);
   return (
     <div className="relative">
-      <nav className="z-10 flex fixed w-full  top-0 items-center justify-between flex-wrap bg-gray-200 px-8  py-2 md:py-4 md:px-12  lg:px-16 xl:px-24  2xl:px-28 ">
+      <nav className="z-10 flex fixed w-full  top-0 items-center justify-between flex-wrap bg-gray-200 px-8  py-3 md:py-4 md:px-12  lg:px-16 xl:px-24  2xl:px-28 ">
         <Link href="/" className="md:w-2/12 w-8/12">
           <Image
+            priority
+            alt="Logo"
             src="/logo.svg"
             className=" object-cover"
             width={1920}
@@ -261,7 +263,7 @@ function Navbar() {
                   src="/insta.svg"
                   width={500}
                   height={500}
-                  className="w-full  bg-white rounded-md p-1"
+                  className="w-full bg-gray-950/20 rounded-full p-1"
                 />
               </Link>
               <Link
@@ -275,7 +277,7 @@ function Navbar() {
                   src="/whatsapp.svg"
                   width={0}
                   height={0}
-                  className="w-full bg-white rounded-md p-1"
+                  className="w-full bg-gray-950/20 rounded-full p-1"
                 />
               </Link>
               <div

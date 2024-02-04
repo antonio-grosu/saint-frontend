@@ -64,11 +64,12 @@ const Hero = () => {
         {!finished && (
           <>
             {hero >= 1 && (
-              <div className="md:w-1/2 w-7/12 rounded-md slide-in mx-auto absolute left-0 md:top-4">
+              <div className="md:w-1/2 w-7/12 rounded-2xl slide-in mx-auto absolute left-0 md:top-4">
                 <Image
+                  priority
                   alt="Pie Chart"
                   src="/heroFirst.svg"
-                  className="object-cover"
+                  className="object-cover rounded-md"
                   width={1920}
                   height={1920}
                 />
@@ -77,6 +78,7 @@ const Hero = () => {
             {hero >= 2 && (
               <div className="md:w-8/12 w-9/12 slide-in  absolute right-0 md:top-12 top-24">
                 <Image
+                  priority
                   alt="Chart"
                   src="/heroSecond.svg"
                   className="object-cover"
@@ -91,6 +93,8 @@ const Hero = () => {
           <div className="w-full border-2 slide-right border-pink-500 p-8 gap-4 rounded-2xl flex items-start justify-between">
             <div className="w-full">
               <Image
+                priority
+                alt="Saint's Models Logo"
                 className="object-cover"
                 src="/logo.svg"
                 width={1920}
@@ -99,6 +103,8 @@ const Hero = () => {
             </div>
             <div className="w-3/12">
               <Image
+                priority
+                alt="Only Fans Logo"
                 className="object-cover"
                 src="/only.svg"
                 width={1920}
@@ -186,6 +192,8 @@ const Testimonials = () => {
           <div className="flex items-center justify-center ">
             <div className="w-2/12">
               <Image
+                priority
+                alt="Testimonial Photo"
                 src={testimonial.img}
                 width={1920}
                 height={1920}
@@ -193,7 +201,7 @@ const Testimonials = () => {
               />
             </div>
 
-            <h4 className="text-lg font-semibold tetx-white">
+            <h4 className="text-lg font-semibold tetx-white ml-4">
               {testimonial.name}
             </h4>
           </div>
@@ -202,6 +210,8 @@ const Testimonials = () => {
         </div>
         <div className="w-full ">
           <Image
+            priority
+            alt="Results"
             src="/testimonialsIllustration.svg"
             width={1920}
             height={1920}
@@ -224,6 +234,8 @@ const Serviciu = () => {
       <div className="w-7/12">
         <div className="md:w-5/12 w-full md:block hidden p-2  rounded-sm ">
           <Image
+            priority
+            alt="Service Presentation"
             src="/illustration.svg"
             width={1920}
             height={1920}
@@ -238,6 +250,7 @@ const Serviciu = () => {
         <div className="md:w-5/12 w-full md:hidden mt-6 p-2 rounded-sm ">
           <div className="w-full">
             <Image
+              priority
               alt="Phone Mockup"
               src="/illustration.svg"
               width={1920}
