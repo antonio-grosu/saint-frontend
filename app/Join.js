@@ -2,7 +2,7 @@ import Image from "next/image";
 import axios from "axios";
 import { useState } from "react";
 function Join() {
-  const [sent, setSent] = useState(true);
+  const [sent, setSent] = useState(false);
   const [name, setName] = useState("");
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
