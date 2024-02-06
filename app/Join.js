@@ -39,40 +39,21 @@ function Join() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      // const response = await axios.post("https://saint-api.vercel.app", {
-      //   name: name,
-      //   email: email,
-      //   country: country,
-      //   number: number,
-      //   option: option,
-      //   userName: userName,
-      //   insta: insta,
-      // });
-      const response = await fetch(
-        "https://saint-api.vercel.app",
-
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: {
-            name: name,
-            email: email,
-            country: country,
-            number: number,
-            option: option,
-            userName: userName,
-            insta: insta,
-          },
-        }
-      );
-      console.log(response.data);
-      setSent(!sent);
-    } catch (error) {
-      console.error("Error:", error);
-    }
+    axios
+      .post("https://saint-api.vercel.app", {
+        name: name,
+        email: email,
+        country: country,
+        number: number,
+        option: option,
+        userName: userName,
+        insta: insta,
+      })
+      .then((res) => {
+        console.log(res.data);
+        setSent(!sent);
+      })
+      .catch((err) => console.log(err));
   };
   return (
     <div className="bg-gray-950 min-h-screen  gap-12 flex-col md:flex-row flex items-center justify-between py-36 px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
