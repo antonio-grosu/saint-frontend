@@ -40,15 +40,18 @@ function Join() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://saint-api.vercel.app/", {
-        name: name,
-        email: email,
-        country: country,
-        number: number,
-        option: option,
-        userName: userName,
-        insta: insta,
-      });
+      const response = await axios.post(
+        "https://saint-8b6r5nbzx-codevs-ro.vercel.app",
+        {
+          name: name,
+          email: email,
+          country: country,
+          number: number,
+          option: option,
+          userName: userName,
+          insta: insta,
+        }
+      );
       console.log(response.data);
       setSent(!sent);
     } catch (error) {
