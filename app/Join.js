@@ -40,16 +40,24 @@ function Join() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://saint-api.vercel.app/", {
-        name: name,
-        email: email,
-        country: country,
-        number: number,
-        option: option,
-        username: userName,
-        insta: insta,
+      const response = await fetch("https://saint-api.vercel.app/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          country: country,
+          number: number,
+          option: option,
+          username: userName,
+          insta: insta,
+        }),
       });
-      console.log(response.data);
+
+      const data = await response.json();
+      console.log(data);
       setSent(!sent);
     } catch (error) {
       console.log(error);
