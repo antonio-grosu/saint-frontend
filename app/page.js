@@ -80,7 +80,7 @@ const Hero = () => {
               </div>
             )}
             {hero >= 2 && (
-              <div className="md:w-8/12 w-9/12 slide-in  absolute right-0 md:top-12 top-24">
+              <div className="md:w-8/12 w-5/12 slide-in  absolute right-0 md:top-12 top-24">
                 <Image
                   priority
                   alt="Chart"
@@ -98,7 +98,7 @@ const Hero = () => {
             priority
             width={1920}
             height={1920}
-            src="/heroThird.svg"
+            src="/heroThird.png"
             className="rounded-md border-2 border-pink-500 "
             alt="Logos"
           />
@@ -205,7 +205,7 @@ const Testimonials = () => {
           <Image
             priority
             alt="Results"
-            src="/testimonialsIllustration.svg"
+            src="/testimonialsIllustration.png"
             width={1920}
             height={1920}
             className="object-cover rounded-md"
@@ -229,7 +229,7 @@ const Serviciu = () => {
           <Image
             priority
             alt="Service Presentation"
-            src="/illustration.svg"
+            src="/illustration.png"
             width={1920}
             height={1920}
             className="object-cover"
@@ -245,7 +245,7 @@ const Serviciu = () => {
             <Image
               priority
               alt="Phone Mockup"
-              src="/illustration.svg"
+              src="/illustration.png"
               width={1920}
               height={1920}
               className="object-cover"

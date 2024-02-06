@@ -21,7 +21,7 @@ const Serviciu = () => {
       <div className="md:w-5/12 w-full md:block hidden p-2  rounded-sm ">
         <Image
           alt="Illustration"
-          src="/illustration.svg"
+          src="/illustration.png"
           width={1920}
           height={1920}
           className="w-7/12"
@@ -34,10 +34,10 @@ const Serviciu = () => {
         <div className="md:w-5/12 w-full md:hidden mt-6 p-2   rounded-sm ">
           <Image
             alt="Illustration"
-            src="/illustration.svg"
-            width={0}
-            height={0}
-            className="w-full"
+            src="/illustration.png"
+            width={1920}
+            height={1920}
+            className="object-cover"
           />
         </div>
 
