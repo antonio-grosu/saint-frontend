@@ -42,6 +42,7 @@ function Join() {
     try {
       const response = await fetch("https://saint-api.vercel.app/", {
         method: "POST",
+        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
