@@ -182,7 +182,7 @@ function Navbar() {
                 Contact us
               </h3>
               <Link
-                href="mailto:aintsmodels1@gmail.com"
+                href="mailto:saintsmodels1@gmail.com"
                 onClick={() => setMobile(!mobile)}
                 className="py-4 slide-in flex items-center justify-start gap-2"
               >
