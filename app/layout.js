@@ -4,13 +4,13 @@ import Footer from "./Footer";
 
 export const metadata = {
   title: "Saint's Models Agency",
-  description: "Elite OnlyFans Modeling Partnership",
+  description: "The way to a better living",
   icons: {
     icon: "/favicon.png",
-    apple: "/apple-touch-icon.png",
+    apple: "/apple.png",
     other: {
       rel: "apple-icon",
-      url: "/apple-touch-icon.png",
+      url: "/apple.png",
     },
   },
 };

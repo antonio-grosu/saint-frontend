@@ -8,7 +8,7 @@ function Footer() {
         <div className="flex items-center justify-between flex-col">
           <Link href="/" className="w-1/2 md:w-full">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Logo"
               className="object-cover"
               width={1920}

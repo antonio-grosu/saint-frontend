@@ -81,14 +81,14 @@ function Join() {
         <div className="flex flex-col items-center gap-4 mt-8">
           <Image
             alt="Logos"
-            src="/logo.svg"
+            src="/logo.png"
             className="w-full"
             width={1920}
             height={1920}
           />
           <Image
             alt="Logos"
-            src="/only.svg"
+            src="/only.png"
             className="w-5/12"
             width={1920}
             height={1920}

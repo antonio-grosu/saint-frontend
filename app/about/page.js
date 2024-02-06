@@ -109,10 +109,10 @@ const MainSection = () => {
           Increase Your Reach{" "}
           <Image
             alt="Onlyfans Logo"
-            src="/only.svg"
-            className="w-7/12 mx-auto"
-            width={0}
-            height={0}
+            src="/only.png"
+            className="w-7/12 mx-auto mt-4"
+            width={1920}
+            height={1920}
           />
         </h3>
         <h3 className="text-xl font-semibold">
@@ -128,8 +128,8 @@ const MainSection = () => {
             Increase Your Reach{" "}
             <Image
               alt="Onlyfans Logo"
-              src="/only.svg"
-              className="w-7/12  mx-auto"
+              src="/only.png"
+              className="w-1/2  mx-auto mt-4"
               width={1920}
               height={1920}
             />

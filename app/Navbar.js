@@ -14,7 +14,7 @@ function Navbar() {
           <Image
             priority
             alt="Logo"
-            src="/logo.svg"
+            src="/logo.png"
             className="object-cover"
             width={1920}
             height={1920}
@@ -254,14 +254,14 @@ function Navbar() {
                 onClick={() => {
                   setSocials(!socials);
                 }}
-                className="w-12 h-12  slide-in flex items-center justify-center cursor-pointer  transition-all"
+                className="w-12 h-12  slide-in flex items-center rounded-full justify-center cursor-pointer hover:bg-pink-100  transition-all"
               >
                 <Image
                   alt="Insta"
-                  src="/insta.svg"
+                  src="/insta.png"
                   width={1920}
                   height={1920}
-                  className="object-cover bg-gray-950/20 rounded-full p-1"
+                  className="object-cover bg-gray-50/50 rounded-full p-1"
                 />
               </Link>
               <Link
@@ -269,14 +269,14 @@ function Navbar() {
                 onClick={() => {
                   setSocials(!socials);
                 }}
-                className="w-12 h-12 slide-in  rounded-full flex items-center justify-center cursor-pointer hover:bg-pink-100 transition-all"
+                className="w-12 h-12  slide-in flex items-center rounded-full justify-center cursor-pointer hover:bg-pink-100  transition-all"
               >
                 <Image
-                  alt="Insta"
-                  src="/whatsapp.svg"
+                  alt="Whatsapp"
+                  src="/wh.png"
                   width={1920}
                   height={1920}
-                  className="object-cover bg-gray-950/20 rounded-full p-1"
+                  className="object-cover bg-gray-50/50 rounded-full p-1"
                 />
               </Link>
               <div
