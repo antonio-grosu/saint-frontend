@@ -250,7 +250,7 @@ function Navbar() {
           {socials && (
             <>
               <Link
-                href="https://www.instagram.com/saint_models"
+                href="https://www.instagram.com/saints_models"
                 onClick={() => {
                   setSocials(!socials);
                 }}
