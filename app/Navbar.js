@@ -182,7 +182,7 @@ function Navbar() {
                 Contact us
               </h3>
               <Link
-                href={"/"}
+                href="mailto:aintsmodels1@gmail.com"
                 onClick={() => setMobile(!mobile)}
                 className="py-4 slide-in flex items-center justify-start gap-2"
               >
@@ -198,7 +198,7 @@ function Navbar() {
                 Email
               </Link>
               <Link
-                href={"/"}
+                href="https://wa.me/400766851285?text=Hi,I%20would%20like%20to%20speak%20to%20an%20agent%F0%9F%92%96"
                 onClick={() => setMobile(!mobile)}
                 className="py-4 slide-in flex items-center justify-start gap-2"
               >
@@ -265,7 +265,7 @@ function Navbar() {
                 />
               </Link>
               <Link
-                href="https://wa.me/0766851285"
+                href="https://wa.me/400766851285?text=Hi,I%20would%20like%20to%20speak%20to%20an%20agent%F0%9F%92%96"
                 onClick={() => {
                   setSocials(!socials);
                 }}

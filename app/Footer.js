@@ -66,7 +66,7 @@ function Footer() {
               Email
             </Link>
             <Link
-              href="https://wa.me/0766851285"
+              href="https://wa.me/400766851285?text=Hi,I%20would%20like%20to%20speak%20to%20an%20agent%F0%9F%92%96"
               className="hover:text-pink-500 transition-all hover:underline hover:underline-offset-2"
             >
               WhatsApp

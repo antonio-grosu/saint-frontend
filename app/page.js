@@ -68,11 +68,11 @@ const Hero = () => {
         {!finished && (
           <>
             {hero >= 1 && (
-              <div className="md:w-1/2 w-7/12 rounded-2xl slide-in mx-auto absolute left-0 md:top-4">
+              <div className="md:w-8/12 w-9/12 slide-in  absolute  md:top-12 top-0">
                 <Image
                   priority
                   alt="Pie Chart"
-                  src="/heroFirst.svg"
+                  src="/heroFirst.png"
                   className="object-cover rounded-md"
                   width={1920}
                   height={1920}
@@ -80,7 +80,7 @@ const Hero = () => {
               </div>
             )}
             {hero >= 2 && (
-              <div className="md:w-8/12 w-5/12 slide-in  absolute right-0 md:top-12 top-24">
+              <div className="md:w-8/12 w-9/12 slide-in  absolute right-0 md:top-12 top-24">
                 <Image
                   priority
                   alt="Chart"
@@ -99,7 +99,7 @@ const Hero = () => {
             width={1920}
             height={1920}
             src="/heroThird.png"
-            className="rounded-md border-2 border-pink-500 "
+            className="rounded-md slide-right shadow-md shadow-pink-500/20"
             alt="Logos"
           />
         )}
