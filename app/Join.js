@@ -56,6 +56,10 @@ function Join() {
         }),
       });
 
+      if (!response.ok) {
+        throw new Error(`Error in server response: ${response.status}`);
+      }
+
       const data = await response.json();
       console.log(data);
       setSent(!sent);
