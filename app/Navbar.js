@@ -57,7 +57,7 @@ function Navbar() {
             />
             <path d="M10.5 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" />
           </svg>
-          Join us
+          18+ Join us
         </Link>
         <svg
           className="w-8 h-8 md:hidden text-gray-800 dark:text-pink-500"
@@ -174,7 +174,7 @@ function Navbar() {
                   />
                   <path d="M10.5 14.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" />
                 </svg>
-                Join us
+                18+ Join us
               </Link>
             </div>
             <div className="w-full">

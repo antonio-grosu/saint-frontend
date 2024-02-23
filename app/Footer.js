@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="bg-gray-200 px-8 pt-12 pb-4 md:px-12 lg:px-16 xl:px-24 2xl:px-28">
       <div className="grid grid-cols-1 md:grid-cols-4 md:items-start text-center items-center gap-12 md:gap-0">
-        <div className="flex items-center justify-between flex-col">
+        <div className="flex items-center justify-between flex-col text-pink-500 font-bold text-left">
           <Link href="/" className="w-1/2 md:w-full">
             <Image
               src="/logo.png"
@@ -57,7 +57,7 @@ function Footer() {
           </div>
         </div>
         <div className="text-gray-950">
-          <h3 className="font-semibold text-lg text-center">Contact Us</h3>
+          <h3 className="font-semibold text-lg text-center">Contact Us 18+</h3>
           <div className="flex flex-col text-sm gap-4 md:items-center">
             <Link
               href="mailto:saintsmodels1@gmail.com"

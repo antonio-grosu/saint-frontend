@@ -10,6 +10,7 @@ function Join() {
   const [option, setOption] = useState("");
   const [number, setNumber] = useState("");
   const [insta, setInsta] = useState("");
+  const [age, setAge] = useState("0/0/0");
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -36,17 +37,28 @@ function Join() {
   const handleInstaChange = (e) => {
     setInsta(e.target.value);
   };
+  const handleAgeChange = (e) => {
+    setAge(e.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://saint-api.vercel.app/", {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+      console.log("Submitting form...");
+
+      // Log variables to ensure they have the correct values
+      console.log("Name:", name);
+      console.log("Email:", email);
+      console.log("Country:", country);
+      console.log("Number:", number);
+      console.log("Option:", option);
+      console.log("Username:", userName);
+      console.log("Instagram:", insta);
+      console.log("Age:", age);
+
+      const response = await axios.post(
+        "https://saint-api.vercel.app/",
+        {
           name: name,
           email: email,
           country: country,
@@ -54,21 +66,25 @@ function Join() {
           option: option,
           username: userName,
           insta: insta,
-        }),
-      });
+          age: age,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-      if (!response.ok) {
+      if (response.status !== 200) {
         throw new Error(`Error in server response: ${response.status}`);
       }
 
-      const data = await response.json();
-      console.log(data);
+      console.log("Server response:", response.data);
       setSent(!sent);
     } catch (error) {
-      console.log(error);
+      console.error("Error:", error);
     }
   };
-
   return (
     <div className="bg-gray-950 min-h-screen  gap-12 flex-col md:flex-row flex items-center justify-between py-36 px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
       <div className="md:w-7/12">
@@ -125,7 +141,16 @@ function Join() {
             className="block mt-2 bg-pink-500/10 border-2 w-full py-1 focus:border-pink-500 focus:outline-none px-4 text-pink-500 border-pink-500/50 rounded-full placeholder:text-pink-500/40 "
           ></input>
         </div>
-
+        <div>
+          <label className="text-white">Date Of Birth</label>
+          <input
+            type="date"
+            value={age}
+            onChange={handleAgeChange}
+            required
+            className="block mt-2 bg-pink-500/10 border-2 w-full py-1 focus:border-pink-500 focus:outline-none px-4 text-pink-500 border-pink-500/50 rounded-full placeholder:text-pink-500/40 "
+          ></input>
+        </div>
         <div className="slide-in">
           <label className="text-white">Your Email</label>
           <input
@@ -401,6 +426,10 @@ function Join() {
             className="block mt-2 bg-pink-500/10 border-2 w-full py-1 focus:border-pink-500 focus:outline-none px-4 text-pink-500 border-pink-500/50 rounded-full placeholder:text-pink-500/40 "
           ></input>
         </div>
+        <label className="text-white block">
+          <input type="checkbox" required className="bg-red-200" />I am 18+
+          years old
+        </label>
         {!sent && (
           <button
             type="submit"

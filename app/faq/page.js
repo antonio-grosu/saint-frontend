@@ -11,7 +11,7 @@ function FAQ() {
         <div className="mt-8 flex slide-in flex-col items-center justify-between  gap-4">
           <Question
             qes="How do I get started as a model with SaintsModels?"
-            res="To begin your journey, simply visit our website and follow the easy sign-up process. Once registered, our team will guide you through the onboarding steps."
+            res="To begin your journey, firstly you must be 18+ years old then, simply visit our website and follow the easy sign-up process. Once registered, our team will guide you through the onboarding steps."
           />
           <Question
             qes="What sets SaintsModels apart from other agencies on OnlyFans?"

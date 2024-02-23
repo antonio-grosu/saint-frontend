@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 export const metadata = {
-  title: "Saint's Models Agency",
+  title: "18+ | Saint's Models Agency",
   description: "The way to a better living",
   icons: {
     icon: "/favicon.png",

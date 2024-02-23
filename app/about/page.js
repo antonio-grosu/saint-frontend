@@ -66,7 +66,7 @@ const Serviciu = () => {
               clipRule="evenodd"
             />
           </svg>
-          Let's Talk
+          18+ Let's Talk
         </Link>
       </div>
       <Link
@@ -86,7 +86,7 @@ const Serviciu = () => {
             clipRule="evenodd"
           />
         </svg>
-        Let's Talk
+        18+ Let's Talk
       </Link>
     </div>
   );
@@ -166,7 +166,7 @@ const MainSection = () => {
               clipRule="evenodd"
             />
           </svg>
-          Let's Talk
+          18+ Let's Talk
         </Link>
       </div>
       <Link
@@ -186,7 +186,7 @@ const MainSection = () => {
             clipRule="evenodd"
           />
         </svg>
-        Let's Talk
+        18+ Let's Talk
       </Link>
     </div>
   );
