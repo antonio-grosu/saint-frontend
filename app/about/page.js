@@ -3,9 +3,11 @@ import Link from "next/link";
 import Join from "../Join";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Age from "../Age";
 function About() {
   return (
     <>
+      <Age />
       <MainSection />
       <Serviciu />
       <div id="join">

@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
 import Join from "../Join";
+import Age from "../Age";
 function FAQ() {
   return (
     <>
+      <Age />
       <div className="bg-neutral-50  py-36 px-8 md:px-24 lg:px-36 xl:px-48 2xl:px-72 ">
         <h1 className="text-4xl  font-bold w-full text-center text-pink-500">
           Saint's Models Agency FAQ

@@ -2,12 +2,15 @@
 import Image from "next/image";
 import Join from "./Join";
 import Link from "next/link";
+import Age from "./Age";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <Age />
+
       <Testimonials />
       <Serviciu />
       <div id="join">
